@@ -1,4 +1,4 @@
-import java.util.Arrays;
+package unidad.tda;
 
 public class ColaEnteros{
     //atributos de clase

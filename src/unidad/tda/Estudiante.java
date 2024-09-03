@@ -1,4 +1,6 @@
-public class Estudiante {
+package unidad.tda;
+
+public class Estudiante implements Cloneable {
     private String Nombre;
     private String Grado;
     private String NControl;
@@ -33,10 +35,17 @@ public class Estudiante {
 
     @Override
     public String toString() {
-        return "Estudiante{" +
+        return "unidad.tda.Estudiante{" +
                 "Nombre='" + Nombre + '\'' +
                 ", Grado='" + Grado + '\'' +
                 ", NControl='" + NControl + '\'' +
                 '}';
+    }
+
+    @Override
+    public Estudiante clone() {
+        Estudiante clone = new Estudiante(this.Nombre,this.Grado,this.NControl);
+        // TODO: copy mutable state here, so the clone can't change the internals of the original
+        return clone;
     }
 }
