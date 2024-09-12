@@ -4,11 +4,13 @@ public class Estudiante implements Cloneable {
     private String Nombre;
     private String Grado;
     private String NControl;
+
     public Estudiante(String nombre, String grado, String NControl) {
         Nombre = nombre;
         Grado = grado;
         this.NControl = NControl;
     }
+
     public String getNombre() {
         return Nombre;
     }
@@ -42,9 +44,15 @@ public class Estudiante implements Cloneable {
                 '}';
     }
 
+    public String toCsv() {
+        return Nombre + ',' +
+                Grado + ',' +
+                NControl;
+    }
+
     @Override
     public Estudiante clone() {
-        Estudiante clone = new Estudiante(this.Nombre,this.Grado,this.NControl);
+        Estudiante clone = new Estudiante(this.Nombre, this.Grado, this.NControl);
         // TODO: copy mutable state here, so the clone can't change the internals of the original
         return clone;
     }
